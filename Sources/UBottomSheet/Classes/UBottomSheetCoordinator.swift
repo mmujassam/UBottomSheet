@@ -39,11 +39,7 @@ public class UBottomSheetCoordinator: NSObject {
         var height = 0.0
         if let parentView = parent?.view {
             height = parentView.frame.height
-            // Now you can use the 'height' variable safely
-            print("Parent View Height: \(height)")
         } else {
-            // Handle the case where the parent view or its frame is not available
-            print("Parent view or its frame is not available.")
             height = 600.0
         }
         return height
