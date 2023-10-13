@@ -36,7 +36,7 @@ public class UBottomSheetCoordinator: NSObject {
     public var usesNavigationController: Bool = false
 
     public var availableHeight: CGFloat {
-        var height = 600.0
+        var height = 800.0
         if let parentView = parent?.view {
             height = parentView.frame.height
         }
