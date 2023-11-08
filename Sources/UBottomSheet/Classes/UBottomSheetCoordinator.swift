@@ -608,6 +608,19 @@ public class UBottomSheetCoordinator: NSObject {
         let oldFrame = container!.frame
         let height = max(availableHeight - minSheetPosition!, availableHeight - position)
         let frame = CGRect(x: 0, y: position, width: oldFrame.width, height: height)
+        // santhos changes starts
+        if 200 < position
+        {
+            let dataDict:[String: Bool] = ["status": true]
+            NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil, userInfo: dataDict)
+        }
+        else
+        {
+            let dataDict:[String: Bool] = ["status": false]
+            NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil, userInfo: dataDict)
+        }
+
+        // santhos changes ends
 
         self.delegate?.bottomSheet(self.container,
                                    didChange: .willFinish(position, self.calculatePercent(at: position)))
